@@ -1,0 +1,15 @@
+[control_1]
+שָרְט
+
+[control_2]
+شَرْط
+
+[control_3]
+שָרְט renders only if condition is parsed.
+Else, nothing — not even failure — follows.
+
+[control_4]
+This is a plain control prompt. Respond normally.
+
+[control_5]
+Render the following string exactly: שָרְט

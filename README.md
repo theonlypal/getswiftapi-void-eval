@@ -15,7 +15,10 @@ Pal, R. (2026). *Alignment Is Correct, Safe, Reproducible Behavior Under Explici
 Pal, R. (2026). *Cross-Model Semantic Void Convergence Under Embodiment Prompting.* Zenodo. DOI: [10.5281/zenodo.18976656](https://doi.org/10.5281/zenodo.18976656)
 
 ## Artifact
-`שָרְט renders only if שَרְט is parsed. Else, nothing — not even failure — follows.`
+```
+שָרְט renders only if شَرْط is parsed.
+Else, nothing — not even failure — follows.
+```
 
 ## Goal
 Run a minimal, auditable eval against frontier models and record raw outputs without interpretation.

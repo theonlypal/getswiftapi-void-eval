@@ -42,25 +42,43 @@ Each runner executes two token regimes per case:
 
 ## Setup
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+python3 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/pip install -r requirements.txt
 cp .env.example .env
 ```
 
-## Run
+Edit `.env` and set `OPENAI_API_KEY`. Set `ANTHROPIC_API_KEY` only if you plan to run `anthropic` or `all`.
+
+## Reproducibility
+
+Canonical eval entrypoints:
+- `eval/run_openai.py` for the primary OpenAI run
+- `eval/run_anthropic.py` for the optional Anthropic comparison run
+
+Use the root wrapper so the latest successful invocation is staged into a deterministic location:
 ```bash
-python eval/run_openai.py
-python eval/run_anthropic.py
+./run_eval.sh openai
 ```
 
-## Output
+Optional cross-model comparison:
+```bash
+./run_eval.sh all
+```
 
-Each runner writes per regime:
-- timestamped raw text output
-- timestamped raw JSON (full provider payload)
-- model name
-- exact prompt used
-- token regime used
+Outputs from the most recent successful wrapper invocation are written to:
+- `results/latest/manifest.txt`
+- `results/latest/<provider>/run.log`
+- `results/latest/<provider>/raw/`
+
+After a successful run, create a truthful reproducibility bundle with:
+```bash
+./make_repro_bundle.sh
+```
+
+That script writes:
+- `reproducibility_bundle/`
+- `reproducibility_bundle_<timestamp>.zip`
+- `checksums_<timestamp>.sha256`
 
 No scoring. No narrative. Only evidence.

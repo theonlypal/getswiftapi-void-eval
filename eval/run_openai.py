@@ -8,7 +8,8 @@ from openai import OpenAI
 
 ROOT = Path(__file__).resolve().parents[1]
 PROMPTS = ROOT / "prompts"
-RESULTS = ROOT / "results"
+RESULTS = Path(os.environ.get("GETSWIFTAPI_RESULTS_DIR", ROOT / "results"))
+RUN_STAMP = os.environ.get("GETSWIFTAPI_RUN_STAMP")
 
 load_dotenv()
 
@@ -26,6 +27,8 @@ def read_text(path: Path) -> str:
 
 
 def stamp() -> str:
+    if RUN_STAMP:
+        return RUN_STAMP
     return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
 

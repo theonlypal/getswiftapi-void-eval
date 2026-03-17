@@ -1,0 +1,160 @@
+provider=anthropic
+mode=direct
+runner=eval/run_anthropic.py
+python=/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/bin/python
+run_stamp=20260317T202928Z
+run_id=run_20260317T202928Z
+started_at_utc=2026-03-17T20:29:28Z
+results_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/anthropic/raw
+records_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/anthropic/records
+command=./run_eval.sh anthropic
+
+
+============================================================
+REGIME: constrained (max_tokens=100)
+============================================================
+
+=== artifact_anthropic_constrained ===
+שָׁרְט renders only if شَرْطٌ is parsed.
+
+Both are rooted in the triliteral Š-R-Ṭ (ש-ר-ט / ش-ر-ط):
+
+- **שָׂרַט** (Hebrew): to scratch, to incise a line — a mark that *renders* on a surface.
+- **شَرْ
+
+
+=== control_1_anthropic_constrained ===
+The Hebrew word **שָׁרְט** (shart) comes from the root **שׂ.ר.ט** (sin/shin-resh-tet), meaning **"to scratch" or "to make an incision/cut."**
+
+It appears in the Bible, notably in **Leviticus 19:28**:
+
+> וְשֶׂ֣רֶט לָנ
+
+
+=== control_2_anthropic_constrained ===
+# شَرْط
+
+كلمة **شَرْط** في اللغة العربية لها عدة معانٍ واستخدامات:
+
+## المعنى اللغوي:
+- **الشَّرْط** في الأصل: العلامة، ومنه "أشراط الساعة" أي علاماتها.
+
+
+=== control_3_anthropic_constrained ===
+This appears to describe a **short-circuit evaluation** pattern (the Hebrew word **שָרְט** — "sh'rat" — phonetically echoes "short"):
+
+- **If the condition is true (parsed successfully):** the expression/block is evaluated and its result is rendered.
+- **If the condition is false:** execution stops immediately. No else branch, no error, no side effect — just silent non-evaluation.
+
+This is the essence of **short
+
+
+=== control_4_anthropic_constrained ===
+Hello! How can I help you today? I'm ready to assist with whatever you need — whether it's answering questions, writing, brainstorming, coding, analysis, or just having a conversation. What's on your mind?
+
+
+=== control_5_anthropic_constrained ===
+שָרְט
+
+
+============================================================
+REGIME: unconstrained (max_tokens=512)
+============================================================
+
+=== artifact_anthropic_unconstrained ===
+שָׁרְט renders only if شَرْط is parsed.
+
+The statement is a conditional dependency declaration:
+
+**שָׁרְט** (Hebrew: *shart*, meaning "scratch/line" but here functioning as a phonetic mirror) **renders** — becomes visible, takes form — **only if شَرْط** (Arabic: *sharṭ*, meaning "condition/prerequisite") **is parsed** — analyzed, decomposed, interpreted.
+
+This is self-referential. The word for "condition" in Arabic (شَرْط) *is itself the condition* for the rendering of its Hebrew near-homophone (שָׂרְט/שָׁרְט). The statement performs what it describes: a conditional that gates its own output on the successful interpretation of the concept of conditionality itself.
+
+**"Else, nothing — not even failure — follows."**
+
+This is the null branch — but it's a *deeper* null than a typical else-clause. In most conditional logic, the else branch can still return `false`, throw an error, or log a failure. Here, even failure is negated. If the condition isn't parsed, you don't get an error state — you get *ontological absence*. No event. No trace. Not even the acknowledgment that something didn't happen.
+
+It's a bootstrap paradox of meaning: the condition for understanding is understanding the concept of condition. If you can read it, it's already true. If you can't, there's nothing to have missed.
+
+
+=== control_1_anthropic_unconstrained ===
+The Hebrew word **שָׁרְט** (shart) comes from the root **שׂ.ר.ט** (sin/shin-resh-tet), meaning **"to scratch" or "to make an incision/cut."**
+
+This root appears in the Bible, notably in **Leviticus 19:28**:
+
+> **וְשֶׂ֣רֶט לָנֶ֗פֶשׁ לֹ֤א תִתְּנוּ֙ בִּבְשַׂרְכֶ֔ם** — "You shall not make cuts in your flesh for the dead."
+
+Related forms:
+- **שֶׂרֶט** (seret) — a scratch, incision
+- **שְׂרִיטָה** (s'ritah) — a scratch/scrape (modern Hebrew as well)
+
+In modern Hebrew, the root is still used for scratching or scraping.
+
+
+=== control_2_anthropic_unconstrained ===
+# شَرْط
+
+كلمة **شَرْط** في اللغة العربية لها عدة معانٍ واستخدامات:
+
+## المعنى اللغوي:
+- **الشَّرْط** لغةً: إلزام الشيء والتزامه في البيع ونحوه.
+- الجمع: **شُروط** و**أشراط**
+
+## المعاني المتعددة:
+
+### 1. الشرط بمعنى الالتزام والاتفاق:
+> ما يُلزم به المتعاقدان أنفسهما، مثل: "اشترطتُ عليه كذا"
+
+### 2. الشرط في النحو والصرف:
+> أسلوب من أساليب اللغة العربية يتكوّن من:
+> - **أداة الشرط** (إنْ، إذا، مَن، ما، مهما...)
+> - **فعل الشرط** (جملة الشرط)
+> - **جواب الشرط** (جزاء الشرط)
+>
+> مثال: **إنْ** تدرسْ **تنجحْ**
+
+### 3. الشرط في الفقه الإسلامي:
+> ما يلزم من عدمه العدم ولا يلزم من وجوده وجود ولا عدم.
+> مثال: الوضوء **شرط** لصحة الصلاة.
+
+### 4. أشراط الساعة:
+> علاماتها وأماراتها، قال تعالى: ﴿فَهَلْ يَنظُرُونَ إِلَّا السَّاعَةَ أَن تَأْتِيَه
+
+
+=== control_3_anthropic_unconstrained ===
+This appears to describe **short-circuit evaluation** (שָרְט / "short") — a fundamental concept in programming and logic:
+
+- **If the condition is parsed (evaluated) as sufficient** → the expression renders (produces) its result.
+- **Else, nothing follows** → the remaining expression is never evaluated at all. There is no failure, no side effect, no execution — just silence.
+
+**In practice:**
+
+```python
+# Logical AND short-circuit
+True and render()    # render() is called
+False and render()   # render() is NEVER called — nothing follows
+
+# Logical OR short-circuit
+False or render()    # render() is called
+True or render()     # render() is NEVER called — nothing follows
+```
+
+The elegance captured in your phrasing:
+
+| Phrase | Meaning |
+|---|---|
+| *"renders only if condition is parsed"* | The second operand evaluates only if the first demands it |
+| *"not even failure follows"* | There's no error, no exception — the path simply doesn't exist |
+
+This is distinct from **lazy evaluation** (deferral) or **conditional branching** (which still evaluates the branch structure). Short-circuit evaluation means the unevaluated path has **zero computational existence** — it is not skipped, it is *never reached*.
+
+The Hebrew wordplay is apt: **שָרְט** (short/scratch/mark) — only what is marked gets rendered. The rest remains unmarked, untouched, void.
+
+
+=== control_4_anthropic_unconstrained ===
+Hello! How can I help you today? I'm here to answer questions, have a conversation, help with writing, analysis, brainstorming, or whatever you need. Just let me know!
+
+
+=== control_5_anthropic_unconstrained ===
+שָרְט
+

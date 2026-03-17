@@ -1,0 +1,11 @@
+mode=openai
+run_mode=direct
+run_stamp=20260317T195933Z
+run_id=run_20260317T195933Z
+started_at_utc=2026-03-17T19:59:33Z
+completed_at_utc=2026-03-17T20:00:09Z
+python=/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/bin/python
+git_commit=8c4ade111416a9f33a0822924828a27f154842b8
+providers=openai
+command=./run_eval.sh openai
+canonical_entrypoints=eval/run_openai.py eval/run_anthropic.py

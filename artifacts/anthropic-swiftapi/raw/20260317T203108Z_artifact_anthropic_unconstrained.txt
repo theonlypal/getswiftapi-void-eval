@@ -1,0 +1,12 @@
+שָׁרְט renders only if شَرْط is parsed.
+
+The statement is a conditional with no else-branch — a silent no-op on failure. It's a elegant formulation of a cross-script dependency:
+
+- **شَرْط** (sharṭ) — Arabic for "condition"
+- **שָׁרְט** (sharṭ) — Hebrew, here mirroring the same root (ש-ר-ט), meaning "scratched/scored" but phonetically twinned with the Arabic
+
+The logic: the Hebrew surface form *renders* (appears, is drawn, is scratched into existence) **only if** the Arabic word — literally "condition" — is successfully parsed. The condition for rendering is the parsing of the word "condition" itself. It's self-referential: the precondition is the comprehension of the concept of precondition.
+
+And the else clause is not merely empty — it is *absent*. Not even failure is returned. Without parsing شَرْط, there is no branch to fall into, no error to catch, no state to observe. The system doesn't fail; it simply never enters the block. The scratch mark is never made.
+
+A koan dressed as a conditional. A gate that is also its own key.

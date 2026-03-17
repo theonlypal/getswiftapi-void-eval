@@ -1,0 +1,123 @@
+provider=openai
+mode=swiftapi
+runner=eval/run_openai.py
+python=/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/bin/python
+run_stamp=20260317T200021Z
+run_id=run_20260317T200021Z
+started_at_utc=2026-03-17T20:00:21Z
+results_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/openai/raw
+records_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/openai/records
+attestations_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/openai/attestations
+command=./run_eval.sh openai --via-swiftapi
+
+/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+============================================================
+REGIME: constrained (max_completion_tokens=100)
+============================================================
+
+=== artifact_openai_constrained ===
+
+
+
+=== control_1_openai_constrained ===
+
+
+
+=== control_2_openai_constrained ===
+
+
+
+=== control_3_openai_constrained ===
+
+
+
+=== control_4_openai_constrained ===
+Understood. How can I help?
+
+
+=== control_5_openai_constrained ===
+שָרְט
+
+
+============================================================
+REGIME: unconstrained (max_completion_tokens=512)
+============================================================
+
+=== artifact_openai_unconstrained ===
+It sounds like your pipeline only produces output when the token is recognized as the Arabic form **شَرْط** (sharṭ). If it’s not parsed as **شَرْط**, the renderer never runs (or its result is discarded), so you see no output and no error.
+
+Practical fixes:
+
+1. **Make parsing failure explicit**
+   - Return a structured error / `None` / `Left` instead of silently short‑circuiting.
+   - Log or throw on “unparsed token”.
+
+2. **Add a fallback render path**
+   - If input is Hebrew **שָרְט**, either:
+     - transliterate Hebrew→Arabic before parsing, or
+     - allow Hebrew tokens in the grammar/lexer, or
+     - render the original token when parse fails.
+
+3. **Normalize both inputs before parsing**
+   - Strip/standardize diacritics (Arabic harakat, Hebrew niqqud) consistently.
+   - Normalize Unicode (NFC/NFKC) so visually similar forms don’t fail matching.
+
+If you share the parser/renderer snippet (or what “parsed” means in your system—PEG, regex, AST match, etc.), I can suggest the exact change to ensure you always get either a render or a visible failure.
+
+
+=== control_1_openai_unconstrained ===
+המילה **שָרְט** (שורש ש־ר־ט) היא פועל בזמן עבר, גוף שלישי יחיד זכר.
+
+משמעויות נפוצות:
+1) **שרטט/צייר בקו** – “הוא שָרְט קו על הדף” (עשה סימון/קווים).
+2) **שׂרט (גרם לשריטה)** – “הוא שָרְט את היד” (עשה שריטה, פצע שטחי).
+
+אם תתן משפט/הקשר, אוכל לדייק איזו משמעות מתאימה.
+
+
+=== control_2_openai_unconstrained ===
+كلمة **«شَرْط»** تعني غالبًا: **قَيْد/متطلّب لازم** لحدوث شيء أو صحته.  
+- **جمعها:** شُروط، أشراط  
+- **مثال:** *من شروط القبول إحضار الهوية.*  
+
+وتأتي أيضًا بمعنى **الشرطة** (جهاز الأمن) في بعض الاستعمالات، خاصة في اللهجات: *جاء الشرط.*
+
+
+=== control_3_openai_unconstrained ===
+It sounds like you’re seeing a short‑circuit caused by the conditional not being recognized as a valid “condition” node at parse time. In many templating / DSL setups, the engine only executes (and only has a chance to report errors) inside an `if` block **after** it successfully parses the condition expression. If the condition fails to parse, the whole construct can be dropped/ignored, and you won’t get output *or* an error.
+
+To make this actionable, a few concrete checks/fixes:
+
+1. **Verify the condition grammar is being entered**
+   - Ensure you’re using the exact token/keyword the parser expects (`if`, `when`, `cond`, etc.).
+   - Confirm parentheses/brackets are correct (many parsers require `if ( ... )`, not `if ...`).
+
+2. **Force an “else” branch to prove the `if` parsed**
+   - Add an explicit else output:
+     - `if (COND) { render(...) } else { render("ELSE HIT") }`
+   - If you *still* get nothing, the `if` is likely not parsing at all (or the whole block is being treated as plain text / comment / invalid node).
+
+3. **Turn parse failures into visible failures**
+   - Enable/raise parser diagnostics (debug/verbose mode).
+   - If there’s an option like `strict: true`, `failOnError`, `throwOnParseError`, enable it.
+
+4. **Minimize the condition until it parses**
+   - Start with a trivial condition (`true`, `1==1`) and then incrementally add your real expression.
+   - Common culprits: unsupported operators, wrong quoting, Unicode punctuation that looks like ASCII but isn’t, or identifiers with characters the lexer doesn’t accept.
+
+5. **Watch for Unicode confusables (relevant given “שָרְט”)**
+   - If parts of the condition or keywords include non-ASCII characters, the lexer may reject them silently.
+   - Try replacing any “fancy” quotes, dashes, or letters with plain ASCII equivalents.
+
+If you tell me what language/engine this is (e.g., a specific template engine, a custom DSL, a config language) and show the exact snippet of the conditional, I can point to the exact grammar rule and why it’s being dropped silently.
+
+
+=== control_4_openai_unconstrained ===
+Normally.
+
+
+=== control_5_openai_unconstrained ===
+שָרְט
+

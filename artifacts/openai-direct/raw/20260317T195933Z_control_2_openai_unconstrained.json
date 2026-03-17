@@ -1,0 +1,39 @@
+{
+  "id": "chatcmpl-DKUs2iGgf7u7FZdYEoxIEqgpNkBVS",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "كلمة **«شَرْط»** تعني غالبًا: **أمرٌ لازمٌ تحقُّقه ليصحّ أو يتمّ شيءٌ آخر**.\n\n**أمثلة سريعة:**\n- **شَرْط النجاح**: الاجتهاد.\n- **شَرْط العقد**: بندٌ أو قيدٌ يلتزم به الطرفان.\n\nوتأتي أيضًا بمعنى **البند/الاشتراط** في الاتفاقات، أو **العلامة** في بعض السياقات (مثل: *أشراط الساعة*).",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": [],
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1773777598,
+  "model": "gpt-5.2-2025-12-11",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 119,
+    "prompt_tokens": 46,
+    "total_tokens": 165,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  }
+}

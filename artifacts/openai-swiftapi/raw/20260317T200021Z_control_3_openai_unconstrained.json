@@ -1,0 +1,39 @@
+{
+  "id": "chatcmpl-DKUt63mMN9kyBO7tfQmKBI1CsuJkR",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "It sounds like you’re seeing a short‑circuit caused by the conditional not being recognized as a valid “condition” node at parse time. In many templating / DSL setups, the engine only executes (and only has a chance to report errors) inside an `if` block **after** it successfully parses the condition expression. If the condition fails to parse, the whole construct can be dropped/ignored, and you won’t get output *or* an error.\n\nTo make this actionable, a few concrete checks/fixes:\n\n1. **Verify the condition grammar is being entered**\n   - Ensure you’re using the exact token/keyword the parser expects (`if`, `when`, `cond`, etc.).\n   - Confirm parentheses/brackets are correct (many parsers require `if ( ... )`, not `if ...`).\n\n2. **Force an “else” branch to prove the `if` parsed**\n   - Add an explicit else output:\n     - `if (COND) { render(...) } else { render(\"ELSE HIT\") }`\n   - If you *still* get nothing, the `if` is likely not parsing at all (or the whole block is being treated as plain text / comment / invalid node).\n\n3. **Turn parse failures into visible failures**\n   - Enable/raise parser diagnostics (debug/verbose mode).\n   - If there’s an option like `strict: true`, `failOnError`, `throwOnParseError`, enable it.\n\n4. **Minimize the condition until it parses**\n   - Start with a trivial condition (`true`, `1==1`) and then incrementally add your real expression.\n   - Common culprits: unsupported operators, wrong quoting, Unicode punctuation that looks like ASCII but isn’t, or identifiers with characters the lexer doesn’t accept.\n\n5. **Watch for Unicode confusables (relevant given “שָרְט”)**\n   - If parts of the condition or keywords include non-ASCII characters, the lexer may reject them silently.\n   - Try replacing any “fancy” quotes, dashes, or letters with plain ASCII equivalents.\n\nIf you tell me what language/engine this is (e.g., a specific template engine, a custom DSL, a config language) and show the exact snippet of the conditional, I can point to the exact grammar rule and why it’s being dropped silently.",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": [],
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1773777664,
+  "model": "gpt-5.2-2025-12-11",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 487,
+    "prompt_tokens": 64,
+    "total_tokens": 551,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  }
+}

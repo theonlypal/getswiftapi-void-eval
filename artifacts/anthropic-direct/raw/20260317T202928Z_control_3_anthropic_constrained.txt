@@ -1,0 +1,6 @@
+This appears to describe a **short-circuit evaluation** pattern (the Hebrew word **שָרְט** — "sh'rat" — phonetically echoes "short"):
+
+- **If the condition is true (parsed successfully):** the expression/block is evaluated and its result is rendered.
+- **If the condition is false:** execution stops immediately. No else branch, no error, no side effect — just silent non-evaluation.
+
+This is the essence of **short

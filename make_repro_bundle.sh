@@ -5,7 +5,8 @@ usage() {
   cat <<'EOF'
 Usage: ./make_repro_bundle.sh
 
-Packages the most recent successful ./run_eval.sh invocation into a zip bundle.
+Packages the most recent successful ./run_eval.sh invocation into a zip bundle,
+including attestation records when present.
 EOF
 }
 
@@ -58,6 +59,8 @@ GIT_COMMIT="$(git -C "$ROOT" rev-parse HEAD 2>/dev/null || printf 'unknown')"
 rm -rf "$BUNDLE_DIR"
 mkdir -p "$BUNDLE_DIR"
 cp -R "$LATEST_DIR" "$BUNDLE_DIR/results_latest"
+printf '%s\n' "$GIT_COMMIT" > "$BUNDLE_DIR/GIT_COMMIT.txt"
+awk -F= '/^command=/{print $2}' "$LATEST_DIR/manifest.txt" > "$BUNDLE_DIR/COMMAND.txt"
 
 {
   echo "# Full Report"
@@ -75,6 +78,8 @@ cp -R "$LATEST_DIR" "$BUNDLE_DIR/results_latest"
   echo
   echo "## Included files"
   find "$BUNDLE_DIR/results_latest" -type f | sort | sed "s|^$BUNDLE_DIR/|- |"
+  echo "- GIT_COMMIT.txt"
+  echo "- COMMAND.txt"
   echo
   echo "## Notes"
   echo "- This bundle only includes files from the most recent successful \`./run_eval.sh\` invocation staged in \`results/latest/\`."

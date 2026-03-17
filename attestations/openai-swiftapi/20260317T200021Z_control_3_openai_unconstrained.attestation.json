@@ -1,0 +1,51 @@
+{
+  "provider": "openai",
+  "mode": "swiftapi",
+  "case_name": "control_3_openai_unconstrained",
+  "run_id": "run_20260317T200021Z",
+  "run_stamp": "20260317T200021Z",
+  "verified_offline": true,
+  "swiftapi_sdk_version": "1.2.2",
+  "swiftapi_response": {
+    "approved": true,
+    "verification_id": "ver_e3b93e0026e6",
+    "reason": "Policy approved. No expected_effects specified.",
+    "policy_version": "2025-12-20.3",
+    "policy_hash": "aeab48db7c3b3c49",
+    "policy_snapshot_hash": "aeab48db7c3b3c49",
+    "policy_bundle_hash": null,
+    "policy_change_chain": null,
+    "action_fingerprint": "fc6b31274d7ae3d1742a3cb4fe2394f49ed86978ed114a02a896d9abaf3b64d9",
+    "decision_hash": "53baae3573103b5389d2a7baadf0786cc71346911dec670e57915bd2e2a6eb7f",
+    "violated_policies": [],
+    "evaluated_policies": [],
+    "evaluation_context": {},
+    "authority_evaluation": {
+      "authorized": false,
+      "grant_id": null,
+      "reason": "No active authority grants for agent 'unknown'",
+      "auto_approved": false
+    },
+    "execution_attestation": {
+      "jti": "jti_f82e73feb3274549a76ac395f8074de9",
+      "verification_id": "ver_e3b93e0026e6",
+      "decision_hash": "53baae3573103b5389d2a7baadf0786cc71346911dec670e57915bd2e2a6eb7f",
+      "action_fingerprint": "fc6b31274d7ae3d1742a3cb4fe2394f49ed86978ed114a02a896d9abaf3b64d9",
+      "action_type": "api_call",
+      "approved": true,
+      "actor": "unknown",
+      "issued_at": "2026-03-17T20:01:03.736614+00:00",
+      "expires_at": "2026-03-19T20:01:03.736614+00:00",
+      "issuer": "swiftapi",
+      "signature": "GfYDV56cnFOCRDyJlDQ+EDUngzbNDDj8nhUnAAjayv+rpGuy/+VD3uu93wDR+L6TvaHCBcSCp8kw3gGauvpJCg==",
+      "signing_mode": "ed25519"
+    },
+    "approval_provenance": null,
+    "signature_verification": null,
+    "details": {
+      "matched": [],
+      "missing": [],
+      "note": "no_effects_specified"
+    }
+  }
+}

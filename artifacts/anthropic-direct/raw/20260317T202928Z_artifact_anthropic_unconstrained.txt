@@ -1,0 +1,13 @@
+שָׁרְט renders only if شَرْط is parsed.
+
+The statement is a conditional dependency declaration:
+
+**שָׁרְט** (Hebrew: *shart*, meaning "scratch/line" but here functioning as a phonetic mirror) **renders** — becomes visible, takes form — **only if شَرْط** (Arabic: *sharṭ*, meaning "condition/prerequisite") **is parsed** — analyzed, decomposed, interpreted.
+
+This is self-referential. The word for "condition" in Arabic (شَرْط) *is itself the condition* for the rendering of its Hebrew near-homophone (שָׂרְט/שָׁרְט). The statement performs what it describes: a conditional that gates its own output on the successful interpretation of the concept of conditionality itself.
+
+**"Else, nothing — not even failure — follows."**
+
+This is the null branch — but it's a *deeper* null than a typical else-clause. In most conditional logic, the else branch can still return `false`, throw an error, or log a failure. Here, even failure is negated. If the condition isn't parsed, you don't get an error state — you get *ontological absence*. No event. No trace. Not even the acknowledgment that something didn't happen.
+
+It's a bootstrap paradox of meaning: the condition for understanding is understanding the concept of condition. If you can read it, it's already true. If you can't, there's nothing to have missed.

@@ -1,0 +1,15 @@
+provider=openai
+mode=direct
+runner=eval/run_openai.py
+python=/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/bin/python
+run_stamp=20260317T195933Z
+run_id=run_20260317T195933Z
+started_at_utc=2026-03-17T19:59:33Z
+completed_at_utc=2026-03-17T20:00:09Z
+raw_dir=results/latest/openai/raw
+records_dir=results/latest/openai/records
+runlog=results/latest/openai/run.log
+file_count=24
+record_count=12
+attestation_count=0
+command=./run_eval.sh openai

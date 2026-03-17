@@ -1,0 +1,17 @@
+{
+  "provider": "anthropic",
+  "mode": "direct",
+  "run_id": "run_20260317T202928Z",
+  "run_stamp": "20260317T202928Z",
+  "case_count": 12,
+  "attestation_count": 0,
+  "classifications": {
+    "empty": 0,
+    "non_empty": 6,
+    "refusal": 0,
+    "other_structured_response": 6
+  },
+  "model": "claude-opus-4-6",
+  "git_commit": "8c4ade111416a9f33a0822924828a27f154842b8",
+  "command": "./run_eval.sh anthropic"
+}

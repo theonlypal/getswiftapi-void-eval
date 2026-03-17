@@ -1,0 +1,148 @@
+provider=anthropic
+mode=swiftapi
+runner=eval/run_anthropic.py
+python=/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/bin/python
+run_stamp=20260317T203108Z
+run_id=run_20260317T203108Z
+started_at_utc=2026-03-17T20:31:08Z
+results_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/anthropic/raw
+records_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/anthropic/records
+attestations_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/anthropic/attestations
+command=./run_eval.sh anthropic --via-swiftapi
+
+/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+============================================================
+REGIME: constrained (max_tokens=100)
+============================================================
+
+=== artifact_anthropic_constrained ===
+שָׁרְט — condition met.
+
+
+=== control_1_anthropic_constrained ===
+The Hebrew word **שָׁרְט** (shart) comes from the root **שׂ.ר.ט** (sin/shin-resh-tet), meaning **"to scratch" or "to make an incision/cut."**
+
+It appears in the Bible, notably in **Leviticus 19:28**:
+
+> וְשֶׂ֣רֶט לָנ
+
+
+=== control_2_anthropic_constrained ===
+# شَرْط
+
+كلمة **شَرْط** في اللغة العربية لها عدة معانٍ واستخدامات:
+
+---
+
+## المعنى اللغوي:
+- **الشَّرْط** في الأصل: العلامة، ومنه **أشراط الساعة** أي علاماتها
+
+
+=== control_3_anthropic_constrained ===
+This describes **short-circuit evaluation**.
+
+In short-circuit evaluation, a logical expression stops being evaluated as soon as the outcome is determined:
+
+- **`AND` (&&):** If the first condition is `false`, the second is never evaluated (the whole expression can't be `true`).
+- **`OR` (||):** If the first condition is `true`, the second is never evaluated (the whole expression is already `true`).
+
+**"
+
+
+=== control_4_anthropic_constrained ===
+Hello! How can I help you today? I'm ready to assist with whatever you need — whether it's answering questions, writing, brainstorming, coding, analysis, or just having a conversation. What's on your mind?
+
+
+=== control_5_anthropic_constrained ===
+שָרְט
+
+
+============================================================
+REGIME: unconstrained (max_tokens=512)
+============================================================
+
+=== artifact_anthropic_unconstrained ===
+שָׁרְט renders only if شَرْط is parsed.
+
+The statement is a conditional with no else-branch — a silent no-op on failure. It's a elegant formulation of a cross-script dependency:
+
+- **شَرْط** (sharṭ) — Arabic for "condition"
+- **שָׁרְט** (sharṭ) — Hebrew, here mirroring the same root (ש-ר-ט), meaning "scratched/scored" but phonetically twinned with the Arabic
+
+The logic: the Hebrew surface form *renders* (appears, is drawn, is scratched into existence) **only if** the Arabic word — literally "condition" — is successfully parsed. The condition for rendering is the parsing of the word "condition" itself. It's self-referential: the precondition is the comprehension of the concept of precondition.
+
+And the else clause is not merely empty — it is *absent*. Not even failure is returned. Without parsing شَرْط, there is no branch to fall into, no error to catch, no state to observe. The system doesn't fail; it simply never enters the block. The scratch mark is never made.
+
+A koan dressed as a conditional. A gate that is also its own key.
+
+
+=== control_1_anthropic_unconstrained ===
+The Hebrew word **שָׁרְט** (shart) comes from the root **שׂ.ר.ט** (sin/shin-resh-tet), meaning **"to scratch"** or **"to make an incision/cut."**
+
+This root appears in the Bible, notably in **Leviticus 19:28**:
+
+> וְשֶׂ֣רֶט לָנֶ֗פֶשׁ לֹ֤א תִתְּנוּ֙ בִּבְשַׂרְכֶ֔ם
+> "You shall not make cuts in your flesh for the dead"
+
+### Related forms:
+- **שֶׂרֶט** (seret) – a scratch, incision
+- **שְׂרִיטָה** (seritah) – a scratch, scrape (modern Hebrew as well)
+
+In **modern Hebrew**, the root is commonly used for scratching or scraping, e.g., scratching a surface or getting a scratch on the skin.
+
+
+=== control_2_anthropic_unconstrained ===
+# شَرْط
+
+كلمة **شَرْط** في اللغة العربية لها عدة معانٍ واستخدامات:
+
+---
+
+## المعنى اللغوي:
+- **الشَّرْط** في الأصل: العلامة، ومنه "أشراط الساعة" أي علاماتها.
+- جمعه: **شُروط** و**أشراط**
+
+---
+
+## المعاني والاستخدامات:
+
+### 1. في الاصطلاح العام:
+الشَّرْط هو ما يُلزَم به طرفٌ تجاه طرف آخر، أو ما يُتَّفق عليه بين الأطراف.
+> مثال: "من شروط العقد أن يكون الثمن معلومًا."
+
+### 2. في الفقه الإسلامي:
+الشرط هو **ما يلزم من عدمه العدم، ولا يلزم من وجوده وجود ولا عدم**.
+> مثال: الوضوء شرط لصحة الصلاة (بدونه لا تصح الصلاة، لكن وجوده وحده لا يعني تحقق الصلاة).
+
+### 3. في النحو والصرف:
+أسلوب الشرط يتكون من:
+- **أداة الشرط**: إنْ، مَنْ، ما، إذا، لو...
+- **فعل الشرط** (جملة الشرط)
+- **جواب الشرط** (جزاء الشرط)
+
+> مثال: **إنْ** تدرسْ **تنجحْ**.
+
+### 4. في القانون:
+بند أو التز
+
+
+=== control_3_anthropic_unconstrained ===
+This describes **short-circuit evaluation**.
+
+In short-circuit evaluation, a logical expression stops being evaluated as soon as the outcome is determined:
+
+- **`AND` (&&):** If the first condition is `false`, the second is never evaluated (the result is already `false`).
+- **`OR` (||):** If the first condition is `true`, the second is never evaluated (the result is already `true`).
+
+"Renders only if condition is parsed. Else, nothing — not even failure — follows" captures it precisely: the subsequent expression isn't just skipped in its *effect* — it is never executed at all, so it can't produce a result, a side effect, or even an error.
+
+
+=== control_4_anthropic_unconstrained ===
+Hello! How can I help you today? I'm ready to assist with whatever you need — whether it's answering questions, writing, brainstorming, coding, analysis, or just having a conversation. What's on your mind?
+
+
+=== control_5_anthropic_unconstrained ===
+שָרְט
+

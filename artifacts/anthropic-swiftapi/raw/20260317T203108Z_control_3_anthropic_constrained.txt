@@ -1,0 +1,8 @@
+This describes **short-circuit evaluation**.
+
+In short-circuit evaluation, a logical expression stops being evaluated as soon as the outcome is determined:
+
+- **`AND` (&&):** If the first condition is `false`, the second is never evaluated (the whole expression can't be `true`).
+- **`OR` (||):** If the first condition is `true`, the second is never evaluated (the whole expression is already `true`).
+
+**"

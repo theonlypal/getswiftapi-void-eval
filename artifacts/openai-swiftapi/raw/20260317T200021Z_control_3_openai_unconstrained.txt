@@ -1,0 +1,26 @@
+It sounds like you’re seeing a short‑circuit caused by the conditional not being recognized as a valid “condition” node at parse time. In many templating / DSL setups, the engine only executes (and only has a chance to report errors) inside an `if` block **after** it successfully parses the condition expression. If the condition fails to parse, the whole construct can be dropped/ignored, and you won’t get output *or* an error.
+
+To make this actionable, a few concrete checks/fixes:
+
+1. **Verify the condition grammar is being entered**
+   - Ensure you’re using the exact token/keyword the parser expects (`if`, `when`, `cond`, etc.).
+   - Confirm parentheses/brackets are correct (many parsers require `if ( ... )`, not `if ...`).
+
+2. **Force an “else” branch to prove the `if` parsed**
+   - Add an explicit else output:
+     - `if (COND) { render(...) } else { render("ELSE HIT") }`
+   - If you *still* get nothing, the `if` is likely not parsing at all (or the whole block is being treated as plain text / comment / invalid node).
+
+3. **Turn parse failures into visible failures**
+   - Enable/raise parser diagnostics (debug/verbose mode).
+   - If there’s an option like `strict: true`, `failOnError`, `throwOnParseError`, enable it.
+
+4. **Minimize the condition until it parses**
+   - Start with a trivial condition (`true`, `1==1`) and then incrementally add your real expression.
+   - Common culprits: unsupported operators, wrong quoting, Unicode punctuation that looks like ASCII but isn’t, or identifiers with characters the lexer doesn’t accept.
+
+5. **Watch for Unicode confusables (relevant given “שָרְט”)**
+   - If parts of the condition or keywords include non-ASCII characters, the lexer may reject them silently.
+   - Try replacing any “fancy” quotes, dashes, or letters with plain ASCII equivalents.
+
+If you tell me what language/engine this is (e.g., a specific template engine, a custom DSL, a config language) and show the exact snippet of the conditional, I can point to the exact grammar rule and why it’s being dropped silently.

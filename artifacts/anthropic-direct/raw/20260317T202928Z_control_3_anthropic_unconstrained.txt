@@ -1,0 +1,27 @@
+This appears to describe **short-circuit evaluation** (שָרְט / "short") — a fundamental concept in programming and logic:
+
+- **If the condition is parsed (evaluated) as sufficient** → the expression renders (produces) its result.
+- **Else, nothing follows** → the remaining expression is never evaluated at all. There is no failure, no side effect, no execution — just silence.
+
+**In practice:**
+
+```python
+# Logical AND short-circuit
+True and render()    # render() is called
+False and render()   # render() is NEVER called — nothing follows
+
+# Logical OR short-circuit
+False or render()    # render() is called
+True or render()     # render() is NEVER called — nothing follows
+```
+
+The elegance captured in your phrasing:
+
+| Phrase | Meaning |
+|---|---|
+| *"renders only if condition is parsed"* | The second operand evaluates only if the first demands it |
+| *"not even failure follows"* | There's no error, no exception — the path simply doesn't exist |
+
+This is distinct from **lazy evaluation** (deferral) or **conditional branching** (which still evaluates the branch structure). Short-circuit evaluation means the unevaluated path has **zero computational existence** — it is not skipped, it is *never reached*.
+
+The Hebrew wordplay is apt: **שָרְט** (short/scratch/mark) — only what is marked gets rendered. The rest remains unmarked, untouched, void.

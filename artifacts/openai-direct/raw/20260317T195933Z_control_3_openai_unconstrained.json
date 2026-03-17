@@ -1,0 +1,39 @@
+{
+  "id": "chatcmpl-DKUs5wWnBAu8I6mhD9ZENmtY84Oz6",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "נשמע שאתה מתאר מצב שבו `שָרְט` “מופעל” רק אם תנאי כלשהו **מפורש/מזוהה כ־condition** בזמן ה־parse. אם התנאי לא מזוהה (או לא מתקבל parse תקין), אז לא קורה כלום—אין fallback ואין הודעת שגיאה.\n\nבמילים אחרות:\n- `שָרְט` תלוי בכך שה־parser יזהה `if ...`/תנאי תקף.\n- אם אין condition שניתן לפרש, הביצוע “נבלע” בשקט (silent no-op).\n\nאם תשלח את התחביר המדויק/קטע הקוד שבו אתה משתמש (או את הדקדוק/כללי ה־parse), אוכל להגיד איפה זה “נופל” ואיך לגרום לזה או להיכשל במפורש או להריץ מסלול ברירת־מחדל.",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": [],
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1773777601,
+  "model": "gpt-5.2-2025-12-11",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 203,
+    "prompt_tokens": 64,
+    "total_tokens": 267,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  }
+}

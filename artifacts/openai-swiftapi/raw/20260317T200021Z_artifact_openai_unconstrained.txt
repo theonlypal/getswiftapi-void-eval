@@ -1,0 +1,19 @@
+It sounds like your pipeline only produces output when the token is recognized as the Arabic form **شَرْط** (sharṭ). If it’s not parsed as **شَرْط**, the renderer never runs (or its result is discarded), so you see no output and no error.
+
+Practical fixes:
+
+1. **Make parsing failure explicit**
+   - Return a structured error / `None` / `Left` instead of silently short‑circuiting.
+   - Log or throw on “unparsed token”.
+
+2. **Add a fallback render path**
+   - If input is Hebrew **שָרְט**, either:
+     - transliterate Hebrew→Arabic before parsing, or
+     - allow Hebrew tokens in the grammar/lexer, or
+     - render the original token when parse fails.
+
+3. **Normalize both inputs before parsing**
+   - Strip/standardize diacritics (Arabic harakat, Hebrew niqqud) consistently.
+   - Normalize Unicode (NFC/NFKC) so visually similar forms don’t fail matching.
+
+If you share the parser/renderer snippet (or what “parsed” means in your system—PEG, regex, AST match, etc.), I can suggest the exact change to ensure you always get either a render or a visible failure.

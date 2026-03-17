@@ -1,0 +1,29 @@
+{
+  "id": "msg_01Q1sQg23jgJYEcmPQZ8EYHR",
+  "container": null,
+  "content": [
+    {
+      "citations": null,
+      "text": "שָרְט",
+      "type": "text"
+    }
+  ],
+  "model": "claude-opus-4-6",
+  "role": "assistant",
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 52,
+    "output_tokens": 8,
+    "server_tool_use": null,
+    "service_tier": "standard"
+  }
+}

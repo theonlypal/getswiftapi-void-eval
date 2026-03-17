@@ -1,9 +1,10 @@
 # Example runs
 
-This directory stores timestamped raw outputs.
+`results/latest/` stores the most recent successful `./run_eval.sh` invocation.
 
-Format:
-- `*_artifact_*.txt` — raw text
-- `*_artifact_*.json` — provider payload
-- `*_control_*.txt` — raw text
-- `*_control_*.json` — provider payload
+Per provider:
+- `raw/` — raw text outputs and raw provider payloads
+- `records/` — deterministic per-case metadata records
+- `attestations/` — SwiftAPI verification responses when `--via-swiftapi` is used
+- `run.log` — terminal log for the invocation
+- `manifest.txt` — provider-level summary

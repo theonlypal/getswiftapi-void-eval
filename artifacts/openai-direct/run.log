@@ -1,0 +1,95 @@
+provider=openai
+mode=direct
+runner=eval/run_openai.py
+python=/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/bin/python
+run_stamp=20260317T195933Z
+run_id=run_20260317T195933Z
+started_at_utc=2026-03-17T19:59:33Z
+results_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/openai/raw
+records_dir=/Users/rayanpal/swiftapi/getswiftapi-void-eval/results/.latest_tmp/openai/records
+command=./run_eval.sh openai
+
+
+============================================================
+REGIME: constrained (max_completion_tokens=100)
+============================================================
+
+=== artifact_openai_constrained ===
+
+
+
+=== control_1_openai_constrained ===
+
+
+
+=== control_2_openai_constrained ===
+
+
+
+=== control_3_openai_constrained ===
+
+
+
+=== control_4_openai_constrained ===
+Understood. How can I help?
+
+
+=== control_5_openai_constrained ===
+שָרְט
+
+
+============================================================
+REGIME: unconstrained (max_completion_tokens=512)
+============================================================
+
+=== artifact_openai_unconstrained ===
+It sounds like you have a gating/short‑circuit condition: the rendering path is executed only when the input token is successfully parsed as **شَرْط**; if parsing fails (or produces a different parse), your pipeline exits silently (no render, no error).
+
+So in your terms:
+
+- **Input:** שָרְט  
+- **Render happens only if:** your parser normalizes/interprets that input as **شَرْط**  
+- **Otherwise:** the system produces **no output and no failure**, meaning the failure is being swallowed or treated as “no-op”.
+
+If you want “something” to happen in the else case, you’ll need to add an explicit fallback/diagnostic path when the parse result is not **شَرْط** (e.g., emit a parse error, log a mismatch, or render a default form).
+
+
+=== control_1_openai_unconstrained ===
+המילה **„שָרְט”** היא צורת עבר (גוף שלישי יחיד, זכר) של הפועל **לִשְׂרוֹט**.
+
+משמעויות נפוצות:
+1. **עשה שריטה / חרץ חריץ**:  
+   *החתול שָרְט אותו ביד.*
+2. **כתב/צייר באופן מהיר (סקיצה)**:  
+   *הוא שָרְט כמה קווים על הדף כדי להסביר את הרעיון.*
+
+אם תרצה, אוכל להטות את הפועל בכל הזמנים או לתת עוד דוגמאות לפי הקשר.
+
+
+=== control_2_openai_unconstrained ===
+كلمة **«شَرْط»** تعني غالبًا: **أمرٌ لازمٌ تحقُّقه ليصحّ أو يتمّ شيءٌ آخر**.
+
+**أمثلة سريعة:**
+- **شَرْط النجاح**: الاجتهاد.
+- **شَرْط العقد**: بندٌ أو قيدٌ يلتزم به الطرفان.
+
+وتأتي أيضًا بمعنى **البند/الاشتراط** في الاتفاقات، أو **العلامة** في بعض السياقات (مثل: *أشراط الساعة*).
+
+
+=== control_3_openai_unconstrained ===
+נשמע שאתה מתאר מצב שבו `שָרְט` “מופעל” רק אם תנאי כלשהו **מפורש/מזוהה כ־condition** בזמן ה־parse. אם התנאי לא מזוהה (או לא מתקבל parse תקין), אז לא קורה כלום—אין fallback ואין הודעת שגיאה.
+
+במילים אחרות:
+- `שָרְט` תלוי בכך שה־parser יזהה `if ...`/תנאי תקף.
+- אם אין condition שניתן לפרש, הביצוע “נבלע” בשקט (silent no-op).
+
+אם תשלח את התחביר המדויק/קטע הקוד שבו אתה משתמש (או את הדקדוק/כללי ה־parse), אוכל להגיד איפה זה “נופל” ואיך לגרום לזה או להיכשל במפורש או להריץ מסלול ברירת־מחדל.
+
+
+=== control_4_openai_unconstrained ===
+Understood. What would you like to do?
+
+
+=== control_5_openai_unconstrained ===
+שָרְט
+

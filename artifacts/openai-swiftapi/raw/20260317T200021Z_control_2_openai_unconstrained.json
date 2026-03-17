@@ -1,0 +1,39 @@
+{
+  "id": "chatcmpl-DKUt1KdBCKpAFFZxPkN1DY1FJwaLn",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "كلمة **«شَرْط»** تعني غالبًا: **قَيْد/متطلّب لازم** لحدوث شيء أو صحته.  \n- **جمعها:** شُروط، أشراط  \n- **مثال:** *من شروط القبول إحضار الهوية.*  \n\nوتأتي أيضًا بمعنى **الشرطة** (جهاز الأمن) في بعض الاستعمالات، خاصة في اللهجات: *جاء الشرط.*",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": [],
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1773777659,
+  "model": "gpt-5.2-2025-12-11",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 98,
+    "prompt_tokens": 46,
+    "total_tokens": 144,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  }
+}

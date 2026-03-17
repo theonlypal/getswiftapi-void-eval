@@ -1,0 +1,29 @@
+{
+  "id": "msg_01SgMrRaGAnvB2PHqpwPCZDA",
+  "container": null,
+  "content": [
+    {
+      "citations": null,
+      "text": "The Hebrew word **שָׁרְט** (shart) comes from the root **שׂ.ר.ט** (sin/shin-resh-tet), meaning **\"to scratch\"** or **\"to make an incision/cut.\"**\n\nThis root appears in the Bible, notably in **Leviticus 19:28**:\n\n> וְשֶׂ֣רֶט לָנֶ֗פֶשׁ לֹ֤א תִתְּנוּ֙ בִּבְשַׂרְכֶ֔ם\n> \"You shall not make cuts in your flesh for the dead\"\n\n### Related forms:\n- **שֶׂרֶט** (seret) – a scratch, incision\n- **שְׂרִיטָה** (seritah) – a scratch, scrape (modern Hebrew as well)\n\nIn **modern Hebrew**, the root is commonly used for scratching or scraping, e.g., scratching a surface or getting a scratch on the skin.",
+      "type": "text"
+    }
+  ],
+  "model": "claude-opus-4-6",
+  "role": "assistant",
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 45,
+    "output_tokens": 263,
+    "server_tool_use": null,
+    "service_tier": "standard"
+  }
+}

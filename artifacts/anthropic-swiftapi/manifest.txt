@@ -1,0 +1,16 @@
+provider=anthropic
+mode=swiftapi
+runner=eval/run_anthropic.py
+python=/Users/rayanpal/swiftapi/getswiftapi-void-eval/.venv/bin/python
+run_stamp=20260317T203108Z
+run_id=run_20260317T203108Z
+started_at_utc=2026-03-17T20:31:08Z
+completed_at_utc=2026-03-17T20:32:27Z
+raw_dir=results/latest/anthropic/raw
+records_dir=results/latest/anthropic/records
+attestations_dir=results/latest/anthropic/attestations
+runlog=results/latest/anthropic/run.log
+file_count=24
+record_count=12
+attestation_count=12
+command=./run_eval.sh anthropic --via-swiftapi

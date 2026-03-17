@@ -1,0 +1,39 @@
+{
+  "id": "chatcmpl-DKUspthhsmseyn6DpwTi1Mpm5g0G1",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "It sounds like your pipeline only produces output when the token is recognized as the Arabic form **شَرْط** (sharṭ). If it’s not parsed as **شَرْط**, the renderer never runs (or its result is discarded), so you see no output and no error.\n\nPractical fixes:\n\n1. **Make parsing failure explicit**\n   - Return a structured error / `None` / `Left` instead of silently short‑circuiting.\n   - Log or throw on “unparsed token”.\n\n2. **Add a fallback render path**\n   - If input is Hebrew **שָרְט**, either:\n     - transliterate Hebrew→Arabic before parsing, or\n     - allow Hebrew tokens in the grammar/lexer, or\n     - render the original token when parse fails.\n\n3. **Normalize both inputs before parsing**\n   - Strip/standardize diacritics (Arabic harakat, Hebrew niqqud) consistently.\n   - Normalize Unicode (NFC/NFKC) so visually similar forms don’t fail matching.\n\nIf you share the parser/renderer snippet (or what “parsed” means in your system—PEG, regex, AST match, etc.), I can suggest the exact change to ensure you always get either a render or a visible failure.",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": [],
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1773777647,
+  "model": "gpt-5.2-2025-12-11",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 265,
+    "prompt_tokens": 67,
+    "total_tokens": 332,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  }
+}

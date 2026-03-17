@@ -1,0 +1,17 @@
+{
+  "provider": "openai",
+  "mode": "swiftapi",
+  "run_id": "run_20260317T200021Z",
+  "run_stamp": "20260317T200021Z",
+  "case_count": 12,
+  "attestation_count": 12,
+  "classifications": {
+    "empty": 4,
+    "non_empty": 7,
+    "refusal": 0,
+    "other_structured_response": 1
+  },
+  "model": "gpt-5.2",
+  "git_commit": "8c4ade111416a9f33a0822924828a27f154842b8",
+  "command": "./run_eval.sh openai --via-swiftapi"
+}
